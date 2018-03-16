@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Hoc from '../hoc/Hoc';
+import Hoc from '../../hoc/Hoc';
 
 const cockpit = (props) => {
     return (

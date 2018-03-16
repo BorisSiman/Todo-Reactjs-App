@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import UniqueId from 'react-html-id';
 
-import Task from './components/Task';
-import Cockpit from './components/Cockpit';
+import Tasks from '../components/Tasks/Tasks';
+import Cockpit from '../components/cockpit/Cockpit';
 
 class App extends Component {
   state = {
@@ -12,7 +12,8 @@ class App extends Component {
  
   addTaskHandler = (event) => {
     
-    let task = {id: 'test', taskName: event.target.value};
+    let task = {...this.state.task};
+    task.taskName = event.target.value;
     this.setState({task: task});
   }
 
@@ -20,6 +21,10 @@ class App extends Component {
     const tasks = [...this.state.tasks];
     tasks.splice(taskIndex, 1);
     this.setState({tasks: tasks});
+  }
+
+  finishTaskHandler = (taskIndex) => {
+  console.log('idk...')
   }
 
   submitTaskHandler = () => {
@@ -42,9 +47,10 @@ class App extends Component {
 
   render() {
     let tasks = (
-      <Task 
+      <Tasks 
       singleTask={this.state.tasks}
       delete = {this.deleteTaskHandler}
+      done = {this.finishTaskHandler}
       />
     )
     return (
