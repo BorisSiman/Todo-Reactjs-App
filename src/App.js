@@ -11,8 +11,8 @@ class App extends Component {
   }
  
   addTaskHandler = (event) => {
-    UniqueId.enableUniqueIds(this);
-    let task = {id: this.nextUniqueId() , taskName: event.target.value};
+    
+    let task = {id: 'test', taskName: event.target.value};
     this.setState({task: task});
   }
 
@@ -23,15 +23,21 @@ class App extends Component {
   }
 
   submitTaskHandler = () => {
-    let task = this.state.task;
+    UniqueId.enableUniqueIds(this);
+    let task = {...this.state.task};
     if (this.state.task.taskName !== '' ) {
+    task.id = this.nextUniqueId();
     const tasks = [...this.state.tasks];
     tasks.push(task);
     this.setState({tasks: tasks});
     }
     else {
       alert('Enter a task first!');
-    }
+    }   
+  }
+
+  deleteInputHandler = () => {
+    this.setState({task: {id:'', taskName:''}});
   }
 
   render() {
@@ -43,7 +49,8 @@ class App extends Component {
     )
     return (
       <div>
-      <Cockpit 
+      <Cockpit
+      click = {this.deleteInputHandler} 
       addTask = {this.addTaskHandler}
       submitTask = {this.submitTaskHandler}
       task = {this.state.task.taskName}
