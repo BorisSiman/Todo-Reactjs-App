@@ -1,0 +1,30 @@
+input{
+    background:rgb(102, 31, 235);
+    color: white;
+    border-radius: 20px;
+    width: 30%;
+    height: 40px;
+    border-width: 10px;
+    border-color:black;
+    margin: 30px;
+    font-weight: 700;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.sbutton{
+    background:rgb(8, 153, 51);
+    width: 10%;
+    height: 30px;
+    border-radius: 20px;
+    border-color: black;
+    font-size: 20px;
+    margin: 5px;
+
+}
+
+div{
+    font-weight: 700;
+    margin: 5px;
+}

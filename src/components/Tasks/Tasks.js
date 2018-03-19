@@ -4,6 +4,7 @@ import Task from './Task/Task';
 const tasks = (props) => props.singleTask.map((task, index) => {
     return (
         <Task 
+        style = {props.style}
         click = {() => props.delete(index)}
         finished = {() => props.done(index)}
         taskName = {task.taskName}

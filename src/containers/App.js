@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UniqueId from 'react-html-id';
+import classes from './App.css';
 
 import Tasks from '../components/Tasks/Tasks';
 import Cockpit from '../components/cockpit/Cockpit';
@@ -24,7 +25,6 @@ class App extends Component {
   }
 
   finishTaskHandler = (taskIndex) => {
-  console.log('idk...')
   }
 
   submitTaskHandler = () => {
@@ -45,16 +45,17 @@ class App extends Component {
     this.setState({task: {id:'', taskName:''}});
   }
 
-  render() {
+  render() {    
     let tasks = (
       <Tasks 
       singleTask={this.state.tasks}
       delete = {this.deleteTaskHandler}
       done = {this.finishTaskHandler}
+      style = {this.finishTaskHandler}
       />
     )
     return (
-      <div>
+      <div className={classes.app}>
       <Cockpit
       click = {this.deleteInputHandler} 
       addTask = {this.addTaskHandler}

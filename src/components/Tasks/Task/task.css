@@ -1,0 +1,12 @@
+.lt {
+    text-decoration: line-through;
+}
+
+button{
+    color: white;
+    background: red;
+    width: 100px;
+    margin: 5px;
+    height: 30px;
+    border-radius: 20px;
+}
