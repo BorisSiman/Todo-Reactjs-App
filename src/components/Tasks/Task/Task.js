@@ -4,10 +4,10 @@ import classes from './task.css';
 
 const task = (props) => {
     return (
-        <div className={classes.lt}>
-    {props.taskName}
+        <div className={classes.lt} >
     <button onClick={props.click}> Delete task </button>
-    <button onClick={props.finished}> Finish task </button>        
+    <button onClick={props.done}> Finish task </button><br/>      
+    {props.taskName}
       </div>
     )
 }

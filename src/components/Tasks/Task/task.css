@@ -1,12 +1,24 @@
 .lt {
-    text-decoration: line-through;
+    background-color: blueviolet;
+    text-align: center;
+    padding: 20px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+    width: 40%;
 }
 
 button{
-    color: white;
-    background: red;
-    width: 100px;
-    margin: 5px;
-    height: 30px;
-    border-radius: 20px;
+    background-color:white;
+    font: inherit;
+    border: 1px solid blue;
+    padding: 8px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 20px;
 }

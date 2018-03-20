@@ -8,7 +8,8 @@ import Cockpit from '../components/cockpit/Cockpit';
 class App extends Component {
   state = {
     task: {id:'', taskName:''},
-    tasks: []
+    tasks: [],
+    finished: {}
   }
  
   addTaskHandler = (event) => {
@@ -24,9 +25,6 @@ class App extends Component {
     this.setState({tasks: tasks});
   }
 
-  finishTaskHandler = (taskIndex) => {
-  }
-
   submitTaskHandler = () => {
     UniqueId.enableUniqueIds(this);
     let task = {...this.state.task};
@@ -35,6 +33,7 @@ class App extends Component {
     const tasks = [...this.state.tasks];
     tasks.push(task);
     this.setState({tasks: tasks});
+    this.deleteInputHandler();
     }
     else {
       alert('Enter a task first!');
@@ -45,13 +44,12 @@ class App extends Component {
     this.setState({task: {id:'', taskName:''}});
   }
 
-  render() {    
+  render() {
+
     let tasks = (
       <Tasks 
       singleTask={this.state.tasks}
       delete = {this.deleteTaskHandler}
-      done = {this.finishTaskHandler}
-      style = {this.finishTaskHandler}
       />
     )
     return (
