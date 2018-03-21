@@ -1,7 +1,5 @@
 import React from 'react';
 import Task from './Task/Task';
-import Done from './Task/Done';
-import Hoc from '../../hoc/Hoc';
 
 const tasks = (props) => props.singleTask.map((task, index) => {
     return (

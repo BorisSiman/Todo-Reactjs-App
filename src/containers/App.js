@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import UniqueId from 'react-html-id';
-import classes from './App.css';
 
 import Tasks from '../components/Tasks/Tasks';
 import Cockpit from '../components/cockpit/Cockpit';
@@ -49,7 +48,7 @@ class App extends Component {
     console.log(task);
     tasks.splice(taskIndex, 1);
     task.done = !task.done;
-    tasks.push(task);
+    tasks.splice(taskIndex, 0, task);
     this.setState({tasks: tasks});
   }
 
@@ -63,7 +62,7 @@ class App extends Component {
       />
     )
     return (
-      <div className={classes.app}>
+      <div>
       <Cockpit
       click = {this.deleteInputHandler} 
       addTask = {this.addTaskHandler}

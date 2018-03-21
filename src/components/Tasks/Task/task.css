@@ -1,24 +1,18 @@
 .lt {
-    background-color: blueviolet;
-    text-align: center;
-    padding: 20px;
-    margin: 0px auto;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border: 1px solid white;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 30px;
-    color: white;
-    width: 40%;
+    background-color: royalblue;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 1px solid white;
+    
 }
 
-button{
-    background-color:white;
-    font: inherit;
-    border: 1px solid blue;
-    padding: 8px;
-    cursor: pointer;
-    margin: 10px;
-    font-size: 20px;
+.button1{
+        background-color:royalblue;
+        font: inherit;
+        border: 1px solid white;
+        padding: 8px;
+        cursor: pointer;
+        color: white;
+        border-radius: 0px;
+        margin: 0;
 }
