@@ -7,9 +7,8 @@ import Cockpit from '../components/cockpit/Cockpit';
 
 class App extends Component {
   state = {
-    task: {id:'', taskName:''},
-    tasks: [],
-    finished: {}
+    task: {id:'', taskName:'', done: false},
+    tasks: []
   }
  
   addTaskHandler = (event) => {
@@ -41,7 +40,17 @@ class App extends Component {
   }
 
   deleteInputHandler = () => {
-    this.setState({task: {id:'', taskName:''}});
+    this.setState({task: {id:'', taskName:'', done: false}});
+  }
+
+  finishTaskHandler = (taskIndex) => {
+    const tasks = [...this.state.tasks];
+    let task = tasks[taskIndex];
+    console.log(task);
+    tasks.splice(taskIndex, 1);
+    task.done = !task.done;
+    tasks.push(task);
+    this.setState({tasks: tasks});
   }
 
   render() {
@@ -50,6 +59,7 @@ class App extends Component {
       <Tasks 
       singleTask={this.state.tasks}
       delete = {this.deleteTaskHandler}
+      finish = {this.finishTaskHandler}
       />
     )
     return (
