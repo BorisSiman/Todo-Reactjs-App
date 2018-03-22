@@ -3,6 +3,7 @@ import UniqueId from 'react-html-id';
 
 import Tasks from '../components/Tasks/Tasks';
 import Cockpit from '../components/cockpit/Cockpit';
+import Hoc from '../hoc/Hoc'
 
 class App extends Component {
   state = {
@@ -45,7 +46,6 @@ class App extends Component {
   finishTaskHandler = (taskIndex) => {
     const tasks = [...this.state.tasks];
     let task = tasks[taskIndex];
-    console.log(task);
     tasks.splice(taskIndex, 1);
     task.done = !task.done;
     tasks.splice(taskIndex, 0, task);
@@ -61,16 +61,20 @@ class App extends Component {
       finish = {this.finishTaskHandler}
       />
     )
-    return (
-      <div>
+
+    let cockpit = (
       <Cockpit
       click = {this.deleteInputHandler} 
       addTask = {this.addTaskHandler}
       submitTask = {this.submitTaskHandler}
       task = {this.state.task.taskName}
       />
+    )
+    return (
+     <Hoc>
+      {cockpit}
       {tasks}
-      </div>
+      </Hoc>
     );
   }
 }

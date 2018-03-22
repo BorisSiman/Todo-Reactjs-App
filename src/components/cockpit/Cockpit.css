@@ -1,35 +1,18 @@
-input{
-    background:rgb(102, 31, 235);
-    color: white;
-    height: auto;
-    width: 50%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font: inherit;
-    border: 2px solid black;
+input {
     font-weight: 700;
-    padding: 10px;
+    width: 80%;
+    text-align: center;
+    height: 50px;
+    font-size: 30px;
+}
+input:hover{
+    background-color: whitesmoke;
 }
 input:focus{
-    background-color: royalblue;
+    background-color: whitesmoke;
 }
 
- button{
-    background-color:rgb(8, 153, 51);
-    border: 1px solid white;
-    font: inherit;
-    margin: 5px;
-    padding: 10px;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-}
-button:hover{
-    background-color: slategrey;
-}
-
-div{
+.heading {
+    font-size: 50px;
     font-weight: 700;
-    margin: 5px;
-    text-align: center;
 }
