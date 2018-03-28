@@ -36,7 +36,7 @@ class App extends Component {
     this.deleteInputHandler();
     }
     else {
-      this.setState({placeholder: {name:'Enter a task first!', nameColor:{border:'5px solid #d9534f', borderRadius:'10px'}}})
+      this.setState({placeholder: {name:'Enter a task first!', nameColor:{border:'3px solid #d9534f', borderRadius:'10px'}}})
     }   
   }
 
@@ -63,7 +63,6 @@ class App extends Component {
   onKeyPressHandler = (event) => {
     if((event.charCode || event.keyCode) === 13){
       this.submitTaskHandler();
-      console.log('test')
     }
   }
 
