@@ -3,7 +3,7 @@ import UniqueId from 'react-html-id';
 
 import Tasks from '../components/Tasks/Tasks';
 import Cockpit from '../components/cockpit/Cockpit';
-import Hoc from '../hoc/Hoc'
+import Hoc from '../hoc/Hoc';
 
 class App extends Component {
   state = {

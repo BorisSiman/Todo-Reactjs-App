@@ -1,8 +1,7 @@
 import React from 'react';
 import Task from './Task/Task';
 
-const tasks = (props) => props.singleTask.map((task, index) => {
-    return (
+const tasks = (props) => props.singleTask.map((task, index) => (
         <Task 
         click = {() => props.delete(index)}
         taskName = {task.taskName}
@@ -12,6 +11,6 @@ const tasks = (props) => props.singleTask.map((task, index) => {
         finish = {() => props.finish(index)}
         />
         )
-    }) 
+    ) 
 
 export default tasks;
