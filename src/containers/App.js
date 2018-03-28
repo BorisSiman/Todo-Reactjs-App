@@ -8,7 +8,8 @@ import Hoc from '../hoc/Hoc';
 class App extends Component {
   state = {
     task: {id:'', taskName:'', done: false},
-    tasks: []
+    tasks: [],
+    placeholder: { name:'Enter your task', nameColor:{border:'', borderRadius:''}}
   }
  
   addTaskHandler = (event) => {
@@ -35,7 +36,7 @@ class App extends Component {
     this.deleteInputHandler();
     }
     else {
-      alert('Enter a task first!');
+      this.setState({placeholder: {name:'Enter a task first!', nameColor:{border:'5px solid #d9534f', borderRadius:'10px'}}})
     }   
   }
 
@@ -50,6 +51,20 @@ class App extends Component {
     task.done = !task.done;
     tasks.splice(taskIndex, 0, task);
     this.setState({tasks: tasks});
+  }
+  onFocusHandler = () => {
+    this.setState({placeholder: {name: '', nameColor:{border:'', borderRadius:''}}});
+  }
+  onBlurHandler = () => {
+    if(this.state.placeholder.name === ''){
+    this.setState({placeholder: {name:'Enter your task'}})
+    }
+  }
+  onKeyPressHandler = (event) => {
+    if((event.charCode || event.keyCode) === 13){
+      this.submitTaskHandler();
+      console.log('test')
+    }
   }
 
   render() {
@@ -68,6 +83,10 @@ class App extends Component {
       addTask = {this.addTaskHandler}
       submitTask = {this.submitTaskHandler}
       task = {this.state.task.taskName}
+      onFocus = {this.onFocusHandler}
+      onBlur = {this.onBlurHandler}
+      placeholder = {this.state.placeholder}
+      onKeyPress = {this.onKeyPressHandler}
       />
     )
     return (

@@ -6,11 +6,15 @@ const cockpit = (props) =>  (
     <h1 className={classes.heading}>
     React To do
     </h1>
-    <input type='text'
-     placeholder="Enter your task"
+    <input type='text' style={props.placeholder.nameColor}
+     placeholder={props.placeholder.name}
      onDoubleClick={props.click}
+     onKeyPress = {(event) => props.onKeyPress(event)}
      onChange={(event) => props.addTask(event)} 
-     value={props.task}/>
+     onFocus={props.onFocus}
+     onBlur={props.onBlur}
+     value={props.task}
+     />
     <br/>
     <button
     className='btn btn-primary m-4'
